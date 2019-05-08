@@ -29,11 +29,17 @@ addFriend = (friend) => {
   .catch( err => {console.log(err)})
 }
 
+updateFriend = (id, update) => {
+ axios.put(`http://localhost:5000/friends/${id}`, update)
+ .then(res => { this.setState({ friends: res.data }) })
+ .catch(err => console.log(err))
+}
+
 render(){
   return (
     <div className="App">
       <FriendsList friends={this.state.friends} /> 
-      <FriendForm friendLen={this.state.friends.length} addFriend={this.addFriend}/>
+      <FriendForm updateFriend={this.updateFriend} friends={this.state.friends} addFriend={this.addFriend}/>
     </div>
   );
 }
