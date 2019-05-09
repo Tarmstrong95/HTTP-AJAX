@@ -4,6 +4,9 @@ import { Route } from 'react-router-dom';
 import axios from 'axios';
 import FriendsList from './components/FriendsComponent/friends';
 import Friend from './components/FriendsComponent/friend';
+import Nav from './components/navComponent/nav'
+import AddFriend from './components/FriendForm/addFriend';
+import Home from './components/Home/home'
 
 class App extends React.Component {
   state = {
@@ -45,13 +48,17 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <Nav />
 
+        <Route exact path="/" render={props => <Home {...props}/>}/>
 
-
-        <Route exact path="/" render={(props) =>
+        <Route exact path="/friends" render={(props) =>
           <FriendsList {...props} friends={this.state.friends} deleteFriend={this.deleteFriend} />
         } />
-        <Route path="/:id" render={props => <Friend {...props} friends={this.state.friends} />}/>
+
+        <Route  path="/friends/:id" render={props => <Friend {...props} friends={this.state.friends} />}/>
+
+        <Route path="/form" render={props => <AddFriend {...props} addFriend={this.addFriend}/>}/>
       </div>
     );
   }

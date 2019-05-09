@@ -16,7 +16,9 @@ const FriendsList = props => {
                         <h3>{friend.name}</h3>
                         <h4>Age: {friend.age}</h4>
                         <p><strong>Email:</strong> {friend.email} </p>
-                        <Link to={`/${friend.id}`}>Update info</Link>
+                        <div className="linkCont">
+                            <Link className="updateButton" to={`/friends/${friend.id}`}>Update info</Link>
+                        </div>
                         <div>
                             <button onClick={() => removeFriend(friend.id)} >Delete Friend</button>
                         </div>

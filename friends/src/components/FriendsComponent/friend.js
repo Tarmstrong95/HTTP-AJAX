@@ -1,6 +1,6 @@
 import React from 'react';
 import './friend.css';
-import {Link} from 'react-router-dom'
+import UpdateFriend from '../FriendForm/updateFriend'
 
 const Friend = props => {
 const friend = props.friends.find(
@@ -11,12 +11,10 @@ if (!props.friends.length || !friend){
 }
     return (
         <div className='friendCard'>
-        <nav>
-            <Link to="/">Back To The List</Link>
-        </nav>
             <h3>{friend.name}</h3>
             <h4>Age: {friend.age}</h4>
             <p><strong>Email:</strong> {friend.email} </p>
+            <UpdateFriend />
         </div>
     )
 }

@@ -4,10 +4,15 @@
 .friendCont {
     margin: 20px auto;
 }
-.formCont {
-    display: flex;
-    flex-flow: column;
-    width: 33.3%;
-    align-items: center;
-    margin: 10px auto;
-}
+
+.updateButton {
+    border: 1px solid rgb(206, 206, 206);
+    border-radius: 6px;
+    color: rgb(44, 44, 44);
+    text-decoration: none;
+    font-size: .7rem;
+    padding: 2px 8px;
+  }
+  .linkCont {
+      margin: 20px;
+  }
