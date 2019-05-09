@@ -8,6 +8,11 @@ const FriendsList = props => {
         props.deleteFriend(id)
     )
 
+    function routeToItem(ev, friend) {
+        ev.preventDefault();
+        props.history.push(`/friends/${friend.id}`);
+      }
+
     return (
         <div className="friendCont" >
             {
@@ -17,7 +22,7 @@ const FriendsList = props => {
                         <h4>Age: {friend.age}</h4>
                         <p><strong>Email:</strong> {friend.email} </p>
                         <div className="linkCont">
-                            <Link className="updateButton" to={`/friends/${friend.id}`}>Update info</Link>
+                            <Link onClick={ev => routeToItem(ev, friend)} className="updateButton" to={`/friends/${friend.id}`}>Update info</Link>
                         </div>
                         <div>
                             <button className="deleteBtn" onClick={() => removeFriend(friend.id)} >Delete Friend</button>
