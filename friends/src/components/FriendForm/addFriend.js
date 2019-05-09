@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import {Form, Input} from '../StyledComponents/styledComponents'
 
 class AddFriend extends React.Component {
     state = {
@@ -35,13 +36,13 @@ class AddFriend extends React.Component {
     
     render() {
         return (
-            <form onSubmit={this.submit}>
-                <input name="name" onChange={this.handleChange} value={this.state.name} placeholder="Name" />
-                <input name="age" onChange={this.handleChange} value={this.state.age} placeholder="Age" />
-                <input name="email" onChange={this.handleChange} value={this.state.email} placeholder="Email" />
+            <Form onSubmit={this.submit}>
+                <Input name="name" onChange={this.handleChange} value={this.state.name} placeholder="Name" />
+                <Input name="age" onChange={this.handleChange} value={this.state.age} placeholder="Age" />
+                <Input name="email" onChange={this.handleChange} value={this.state.email} placeholder="Email" />
                 <button>Submit</button>
                 <h1 id='success' style={{display: 'none'}}>SUCCESS!</h1>
-            </form>
+            </Form>
         )
     }
 

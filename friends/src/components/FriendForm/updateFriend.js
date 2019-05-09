@@ -1,4 +1,7 @@
 import React from 'react'
+import {Form, Input} from '../StyledComponents/styledComponents'
+
+
 class UpdateFriend extends React.Component {
     state = {
         friend: {
@@ -23,12 +26,12 @@ class UpdateFriend extends React.Component {
     }
     render() {
         return (
-            <form onSubmit={this.submit}>
-                <input name="name" onChange={this.handleChange} value={this.state.friend.name} placeholder="Name" />
-                <input name="age" onChange={this.handleChange} value={this.state.friend.age} placeholder="Age" />
-                <input name="email" onChange={this.handleChange} value={this.state.friend.email} placeholder="Email" />
+            <Form onSubmit={this.submit}>
+                <Input name="name" onChange={this.handleChange} value={this.state.friend.name} placeholder="Name" />
+                <Input name="age" onChange={this.handleChange} value={this.state.friend.age} placeholder="Age" />
+                <Input name="email" onChange={this.handleChange} value={this.state.friend.email} placeholder="Email" />
                 <button>Submit</button>
-            </form>
+            </Form>
         )
     }
 
