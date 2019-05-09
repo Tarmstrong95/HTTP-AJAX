@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components'
 
-export const Form = styled.form`
+export const FormStyle = styled.form`
 display: flex;
 flex-flow: column;
-width: 100%;
+max-width: 500px;
 margin: 30px auto;
 `;
 
@@ -23,4 +23,4 @@ padding: 10px;
 background-color: rgb(0, 0, 0, 0.100);
 `
 
-export default Form;
+export default FormStyle;
