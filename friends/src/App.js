@@ -56,7 +56,7 @@ class App extends React.Component {
           <FriendsList {...props} friends={this.state.friends} deleteFriend={this.deleteFriend} />
         } />
 
-        <Route  path="/friends/:id" render={props => <Friend {...props} friends={this.state.friends} />}/>
+        <Route  path="/friends/:id" render={props => <Friend {...props} friends={this.state.friends} updateFriend={this.updateFriend}/>}/>
 
         <Route path="/form" render={props => <AddFriend {...props} addFriend={this.addFriend}/>}/>
       </div>

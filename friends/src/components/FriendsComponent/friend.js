@@ -14,7 +14,7 @@ if (!props.friends.length || !friend){
             <h3>{friend.name}</h3>
             <h4>Age: {friend.age}</h4>
             <p><strong>Email:</strong> {friend.email} </p>
-            <UpdateFriend />
+            <UpdateFriend id={friend.id} updateFriend={props.updateFriend}/>
         </div>
     )
 }

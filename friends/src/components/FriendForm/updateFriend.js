@@ -6,7 +6,7 @@ class UpdateFriend extends React.Component {
 
     submit = (e) => {
         e.preventDefault();
-        this.props.addFriend(this.state.friend)
+        this.props.updateFriend(this.props.id, this.state.friend)
         this.setState({
             friend: {}
         })
@@ -14,7 +14,6 @@ class UpdateFriend extends React.Component {
 
     handleChange = (e) => {
         this.setState({
-            ...this.state,
             friend: {
                 ...this.state.friend,
                 [e.target.name]: e.target.value
@@ -24,9 +23,9 @@ class UpdateFriend extends React.Component {
     render() {
         return (
             <form onSubmit={this.submit}>
-                <input name="name" onChange={this.handleChange} value={this.state.name} placeholder="Name" />
-                <input name="age" onChange={this.handleChange} value={this.state.age} placeholder="Age" />
-                <input name="email" onChange={this.handleChange} value={this.state.email} placeholder="Email" />
+                <input name="name" onChange={this.handleChange} value={this.state.friend.name} placeholder="Name" />
+                <input name="age" onChange={this.handleChange} value={this.state.friend.age} placeholder="Age" />
+                <input name="email" onChange={this.handleChange} value={this.state.friend.email} placeholder="Email" />
                 <button>Submit</button>
             </form>
         )
