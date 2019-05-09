@@ -1,0 +1,13 @@
+.friendCard{
+    border: 1px solid grey;
+}
+.friendCont {
+    margin: 20px auto;
+}
+.formCont {
+    display: flex;
+    flex-flow: column;
+    width: 33.3%;
+    align-items: center;
+    margin: 10px auto;
+}

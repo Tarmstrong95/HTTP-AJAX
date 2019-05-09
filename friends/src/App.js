@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.css';
-import { Router } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import axios from 'axios';
 import FriendsList from './components/FriendsComponent/friends';
-import FriendForm from './components/FriendsForm/friendsForm'
+import Friend from './components/FriendsComponent/friend';
 
 class App extends React.Component {
   state = {
-    friends: []
+    friends: [],
   }
 
 
@@ -37,22 +37,21 @@ class App extends React.Component {
 
   deleteFriend = (id) => {
     axios.delete(`http://localhost:5000/friends/${id}`)
-    .then(res => this.setState({ friends: res.data }))
-    .catch(err => console.log(err))
+      .then(res => this.setState({ friends: res.data }))
+      .catch(err => console.log(err))
   }
+
 
   render() {
     return (
       <div className="App">
-        <FriendsList
-          friends={this.state.friends}
-          deleteFriend={this.deleteFriend}
-        />
-        <FriendForm
-          updateFriend={this.updateFriend}
-          addFriend={this.addFriend}
-          friends={this.state.friends}
-        />
+
+
+
+        <Route exact path="/" render={(props) =>
+          <FriendsList {...props} friends={this.state.friends} deleteFriend={this.deleteFriend} />
+        } />
+        <Route path="/:id" render={props => <Friend {...props} friends={this.state.friends} />}/>
       </div>
     );
   }

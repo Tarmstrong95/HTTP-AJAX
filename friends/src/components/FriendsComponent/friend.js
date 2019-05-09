@@ -1,18 +1,22 @@
 import React from 'react';
+import './friend.css';
+import {Link} from 'react-router-dom'
 
 const Friend = props => {
-    const friend = props.friend;
-
-    const remove = (e) => {
-        e.preventDefault();
-        props.deleteFriend(friend.id)
-    }
+const friend = props.friends.find(
+    pers => `${pers.id}` === props.match.params.id
+)
+if (!props.friends.length || !friend){
+    return (<h1>Loading....</h1>)
+}
     return (
-        <div>
-            <h1>{friend.name}</h1>
-            <h3>Age: {friend.age}</h3>
-            <p>Email: {friend.email}</p>
-            <button onClick={remove}>Delete Friend</button>
+        <div className='friendCard'>
+        <nav>
+            <Link to="/">Back To The List</Link>
+        </nav>
+            <h3>{friend.name}</h3>
+            <h4>Age: {friend.age}</h4>
+            <p><strong>Email:</strong> {friend.email} </p>
         </div>
     )
 }
