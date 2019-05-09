@@ -20,7 +20,7 @@ const FriendsList = props => {
                             <Link className="updateButton" to={`/friends/${friend.id}`}>Update info</Link>
                         </div>
                         <div>
-                            <button onClick={() => removeFriend(friend.id)} >Delete Friend</button>
+                            <button className="deleteBtn" onClick={() => removeFriend(friend.id)} >Delete Friend</button>
                         </div>
                     </div>
                 )

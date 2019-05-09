@@ -10,12 +10,14 @@ if (!props.friends.length || !friend){
     return (<h1>Loading....</h1>)
 }
     return (
+        <>
         <div className='friendCard'>
             <h3>{friend.name}</h3>
             <h4>Age: {friend.age}</h4>
             <p><strong>Email:</strong> {friend.email} </p>
-            <UpdateFriend friend={friend} updateFriend={props.updateFriend}/>
         </div>
+        <UpdateFriend friend={friend} updateFriend={props.updateFriend}/>
+        </>
     )
 }
 
