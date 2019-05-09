@@ -1,4 +1,5 @@
 import React from 'react'
+
 class AddFriend extends React.Component {
     state = {
         friend: {
@@ -18,6 +19,7 @@ class AddFriend extends React.Component {
                 email: ''
             }
         })
+        document.getElementById('success').style.display = 'block';
     }
 
     handleChange = (e) => {
@@ -29,6 +31,8 @@ class AddFriend extends React.Component {
             }
         })
     }
+
+    
     render() {
         return (
             <form onSubmit={this.submit}>
@@ -36,6 +40,7 @@ class AddFriend extends React.Component {
                 <input name="age" onChange={this.handleChange} value={this.state.age} placeholder="Age" />
                 <input name="email" onChange={this.handleChange} value={this.state.email} placeholder="Email" />
                 <button>Submit</button>
+                <h1 id='success' style={{display: 'none'}}>SUCCESS!</h1>
             </form>
         )
     }

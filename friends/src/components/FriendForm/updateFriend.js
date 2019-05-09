@@ -1,15 +1,16 @@
 import React from 'react'
 class UpdateFriend extends React.Component {
     state = {
-        friend: {}
+        friend: {
+            name: this.props.friend.name,
+            age: this.props.friend.age,
+            email: this.props.friend.email
+        }
     }
 
     submit = (e) => {
         e.preventDefault();
-        this.props.updateFriend(this.props.id, this.state.friend)
-        this.setState({
-            friend: {}
-        })
+        this.props.updateFriend(this.props.friend.id, this.state.friend)
     }
 
     handleChange = (e) => {
