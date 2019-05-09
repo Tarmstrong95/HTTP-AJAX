@@ -50,15 +50,15 @@ class App extends React.Component {
       <div className="App">
         <Nav />
 
-        <Route exact path="/" render={props => <Home {...props}/>}/>
+        <Route exact path="/" render={props => <Home {...props} />} />
 
         <Route exact path="/friends" render={(props) =>
           <FriendsList {...props} friends={this.state.friends} deleteFriend={this.deleteFriend} />
         } />
 
-        <Route  path="/friends/:id" render={props => <Friend {...props} friends={this.state.friends} updateFriend={this.updateFriend}/>}/>
+        <Route path="/friends/:id" render={props => <Friend {...props} friends={this.state.friends} updateFriend={this.updateFriend} />} />
 
-        <Route path="/form" render={props => <AddFriend {...props} addFriend={this.addFriend}/>}/>
+        <Route path="/form" render={props => <AddFriend {...props} addFriend={this.addFriend} />} />
       </div>
     );
   }

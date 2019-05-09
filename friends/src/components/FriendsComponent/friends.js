@@ -11,12 +11,12 @@ const FriendsList = props => {
     function routeToItem(ev, friend) {
         ev.preventDefault();
         props.history.push(`/friends/${friend.id}`);
-      }
+    }
 
     return (
         <div className="friendCont" >
             {
-                props.friends.map( (friend, i) =>
+                props.friends.map((friend, i) =>
                     <div key={i} className='friendCard'>
                         <h3>{friend.name}</h3>
                         <h4>Age: {friend.age}</h4>

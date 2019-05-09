@@ -27,7 +27,7 @@ class UpdateFriend extends React.Component {
     }
     render() {
         return (
-            <Form handleChange={this.handleChange} submit={this.submit} friend={this.state.friend}/>
+            <Form handleChange={this.handleChange} submit={this.submit} friend={this.state.friend} />
         )
     }
 
