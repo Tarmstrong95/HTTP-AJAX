@@ -22,11 +22,8 @@ render(){
     return (
         <>
             <div className='friendCard'>
-                <h3>{this.state.friend.name}</h3>
-                <h4>Age: {this.state.friend.age}</h4>
-                <p><strong>Email:</strong> {this.state.friend.email} </p>
+                <UpdateFriend friend={this.state.friend} updateFriend={this.props.updateFriend} />
             </div>
-            <UpdateFriend friend={this.state.friend} updateFriend={this.props.updateFriend} />
         </>
     )
 }

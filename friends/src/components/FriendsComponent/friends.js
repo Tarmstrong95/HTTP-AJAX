@@ -16,8 +16,8 @@ const FriendsList = props => {
     return (
         <div className="friendCont" >
             {
-                props.friends.map( friend =>
-                    <div className='friendCard'>
+                props.friends.map( (friend, i) =>
+                    <div key={i} className='friendCard'>
                         <h3>{friend.name}</h3>
                         <h4>Age: {friend.age}</h4>
                         <p><strong>Email:</strong> {friend.email} </p>

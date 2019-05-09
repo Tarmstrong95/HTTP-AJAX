@@ -14,6 +14,7 @@ class UpdateFriend extends React.Component {
     submit = (e) => {
         e.preventDefault();
         this.props.updateFriend(this.props.friend.id, this.state.friend)
+        document.getElementById('success').style.display = 'block';
     }
 
     handleChange = (e) => {
@@ -31,6 +32,7 @@ class UpdateFriend extends React.Component {
                 <Input name="age" onChange={this.handleChange} value={this.state.friend.age} placeholder="Age" />
                 <Input name="email" onChange={this.handleChange} value={this.state.friend.email} placeholder="Email" />
                 <button>Submit</button>
+                <h1 id='success' style={{display: 'none'}}>SUCCESS!</h1>
             </Form>
         )
     }
